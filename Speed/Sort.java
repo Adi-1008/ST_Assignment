@@ -3,9 +3,9 @@ package Speed;
 public class Sort implements Runnable {
     DataStructure ds;
     String algorithm;
-    int start;
-    int end;
-    int mid;
+    private int start;
+    private int end;
+    private int mid;
 
     public Sort(DataStructure ds, String algorithm) {
         this.ds = ds;
@@ -16,7 +16,7 @@ public class Sort implements Runnable {
     {
         return this.end;
     }
-    
+
     public int getStart()
     {
         return this.start;
