@@ -5,12 +5,12 @@ Part 2: Analysis of SpeedUni vs SpeedMulti
 (1) SpeedUni Runtime
 
 Input: Array Size = 100,000; Range = 0-2000
-Observed Runtime: Approx 3355.0 ms (Reference from Assignment Figure 1)
+Observed Runtime: Approx 1286.0 ms
 
 (2) SpeedMulti Runtime
 
 Input: Array Size = 100,000; Mid = 50,000; Range = 0-2000
-Observed Runtime: Approx 1022.0 ms (Reference from Assignment Figure 2)
+Observed Runtime: Approx 524.0 ms
 
 (3) Observations & Comparison
 
