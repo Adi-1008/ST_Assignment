@@ -16,7 +16,7 @@ Observed Runtime: Approx 1022.0 ms (Reference from Assignment Figure 2)
 
 Observation: The "Parallel Mode" (SpeedMulti) is significantly faster than the "Normal Mode" (SpeedUni).
 Reason: 1.  Parallel Execution: SpeedMulti utilizes multi-threading. By splitting the 100,000 elements into two chunks of 50,000, two separate CPU cores can sort the halves simultaneously.
-2.  Algorithmic Complexity: Selection sort is $O(N^2)$. Sorting 100,000 items takes roughly $100,000^2$ operations. Sorting two halves of 50,000 takes $2 \times (50,000^2)$, which is effectively half the total work of the single large sort.
+2.  Algorithmic Complexity: Selection sort is $O(N^2)$. Sorting 100,000 items takes roughly $100,000^2$ operations. Sorting two halves of 50,000 takes effectively half time of the total work of the single large sort.
 3.  Result: Even with the overhead of merging the two halves, the parallel approach reduces the total execution time drastically (roughly 3x faster in the provided example).
 
 Part 3: Bubble Sort Upgrade Analysis
