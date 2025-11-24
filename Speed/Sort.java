@@ -12,20 +12,30 @@ public class Sort implements Runnable {
         this.algorithm = algorithm;
     }
 
+    public int getEnd() 
+    {
+        return this.end;
+    }
+    
+    public int getStart()
+    {
+        return this.start;
+    }
+
     public void setStart(int start) { this.start = start; }
     public void setEnd(int end) { this.end = end; }
     public void setMid(int mid) { this.mid = mid; }
 
     // Part 1: Default Selection Sort
     public void selection() {
-        int[] arr = ds.array;
+        double[] arr = ds.array;
         for (int i = start; i < end - 1; i++) {
             int min_idx = i;
             for (int j = i + 1; j < end; j++) {
                 if (arr[j] < arr[min_idx])
                     min_idx = j;
             }
-            int temp = arr[min_idx];
+            double temp = arr[min_idx];
             arr[min_idx] = arr[i];
             arr[i] = temp;
         }
@@ -33,11 +43,11 @@ public class Sort implements Runnable {
 
     // Part 3 (1): Added Bubble Sort Feature
     public void bubble() {
-        int[] arr = ds.array;
+        double[] arr = ds.array;
         for (int i = start; i < end - 1; i++) {
             for (int j = start; j < end - (i - start) - 1; j++) {
                 if (arr[j] > arr[j + 1]) {
-                    int temp = arr[j];
+                    double temp = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
                 }
@@ -47,11 +57,11 @@ public class Sort implements Runnable {
 
     // Merge logic for Parallel Mode
     public void merge() {
-        int[] arr = ds.array;
+        double[] arr = ds.array;
         int n1 = mid; 
         int n2 = arr.length - mid;
-        int[] L = new int[n1];
-        int[] R = new int[n2];
+        double[] L = new double[n1];
+        double[] R = new double[n2];
 
         for (int i = 0; i < n1; ++i) L[i] = arr[i];
         for (int j = 0; j < n2; ++j) R[j] = arr[mid + j];
@@ -64,6 +74,22 @@ public class Sort implements Runnable {
         }
         while (i < n1) { arr[k] = L[i]; i++; k++; }
         while (j < n2) { arr[k] = R[j]; j++; k++; }
+    }
+
+    public int findMinPos(int start, int end)
+    {
+        double a[] = ds.array;
+        double min = a[start];
+        int min_idx = start;
+        for(int i=start; i<end; i++)
+        {
+            if(a[i]<min)
+            {
+                min = a[i];
+                min_idx=i;
+            }
+        }
+        return min_idx;
     }
 
     @Override
